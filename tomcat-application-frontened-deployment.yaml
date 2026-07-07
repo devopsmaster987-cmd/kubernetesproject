@@ -20,14 +20,14 @@ spec:
     spec:
       initContainers:
         - name: initmy-db
-          image: busybox
+          image: busybox:1.28
           command:
             - sh
             - -c
             - until nslookup vprodb; do echo waiting for mydb; sleep 2; done;
 
         - name: initmy-memcache
-          image: busybox
+          image: busybox:1.28
           command:
             - sh
             - -c
