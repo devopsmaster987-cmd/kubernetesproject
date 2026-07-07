@@ -32,7 +32,13 @@ spec:
             - sh
             - -c
             - until nslookup vprocache01; do echo waiting for memcache; sleep 2; done;
-
+        - name: initmy-rabbitmq
+          image: busybox:1.28
+          command:
+           - sh
+           - -c
+           - until nslookup vpromq01; do echo waiting for rabbitmq; sleep 2; done;
+           
       containers:
         - name: vproapp
           image: abdulsamad988/vprofileapp:latest
