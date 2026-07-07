@@ -18,4 +18,3 @@ spec:
   selector:
     app: vpromq01
   type: ClusterIP
-
